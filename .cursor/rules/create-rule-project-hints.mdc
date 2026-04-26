@@ -1,0 +1,20 @@
+---
+description: Where and how to add Cursor project rules (create-rule / new .mdc files)
+alwaysApply: true
+---
+
+# /create-rule — project convention
+
+## Where project rules live
+
+- Put **`.mdc` rules in `saovalles/.cursor/rules/`** (Git root: folder that contains the Angular app and `api/`). If the open workspace is one level up (`lasaovalles/`), point new rules to the subfolder the IDE actually uses as root or duplicate only if the user wants both.
+
+## When the user asks for **create rule**, **`/create-rule`**, or a new project rule
+
+- Apply the user’s **create-rule** skill: `description`, either **`alwaysApply: true`** or **`globs` with `alwaysApply: false`**, keep each file focused (e.g. under ~50 lines), one concern per file, with concrete examples.
+- If **scope** is missing, ask: should it **always** apply, or only when **certain file patterns** are in play? Then set `globs` (e.g. `**/*.ts`, `api/src/**/*.js`) accordingly.
+- **Commits and user-facing text:** do not add `Co-authored-by`, tool/IDE advertising, or branding in git messages or app copy (per workspace user rules). Rules are project guidance, not a place for product mentions.
+
+## Format
+
+- **`.mdc`**, valid YAML frontmatter, clear title and actionable bullets. Ensure `description` and `globs` / `alwaysApply` are consistent with the Cursor rules checker.
