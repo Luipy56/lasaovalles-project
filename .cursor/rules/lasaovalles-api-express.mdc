@@ -1,0 +1,27 @@
+---
+description: Express order API — routes, validation, catalog file, mail
+globs: api/**/*
+alwaysApply: false
+---
+
+# `api/` — Express service
+
+## Routes (all prefixed by app mount **`/api`**)
+
+- `GET /api/health` — liveness.
+- `GET /api/catalog` — public read of JSON catalog.
+- `POST /api/orders` — Zod-validated body; totals recomputed from catalog; **Nodemailer** to owner + customer; rate-limited.
+- `GET|PUT /api/admin/catalog` — requires **`Authorization: Bearer <ADMIN_API_TOKEN>`**; `PUT` replaces full catalog after Zod parse; **atomic write** (temp file + rename).
+
+## Catalog
+
+- Default file: **`api/data/order-catalog.json`**. Regenerate from Excel: **`npm run import-catalog`** (`scripts/import-catalog-from-xlsx.mjs`).
+- Schema validation: **`src/catalogSchema.js`** (Zod). Any schema change must update the import script, this Zod module, and the Angular **`order-catalog.model.ts`**.
+
+## Mail
+
+- Configure via **`api/.env`** (see **`.env.example`**). If SMTP/env incomplete, `POST /api/orders` returns **503** with a clear JSON `error` — do not leak stack traces to clients.
+
+## CORS
+
+- Set **`CORS_ORIGIN`** to the real Angular origin(s) in production; avoid `origin: true` there.

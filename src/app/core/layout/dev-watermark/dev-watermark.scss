@@ -1,0 +1,28 @@
+@use '../../../../styles/tokens' as t;
+
+:host {
+  position: fixed;
+  right: max(0.75rem, env(safe-area-inset-right));
+  bottom: max(0.75rem, env(safe-area-inset-bottom));
+  z-index: 30;
+  pointer-events: none;
+}
+
+.dev-watermark__link {
+  pointer-events: auto;
+  display: inline-block;
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: rgba(30, 55, 35, 0.42);
+  text-decoration: none;
+  transition: color 0.15s ease, opacity 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: t.$color-primary-dark;
+    opacity: 1;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+}

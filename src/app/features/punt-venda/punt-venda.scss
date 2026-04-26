@@ -1,0 +1,35 @@
+@use '../../../styles/tokens' as t;
+
+.puntvenda-block {
+  margin-bottom: t.$space-5;
+  padding: t.$space-4;
+  background: t.$color-surface;
+  border: 1px solid rgba(42, 84, 52, 0.1);
+  border-radius: t.$radius;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.puntvenda-block__h {
+  margin: 0 0 t.$space-3;
+  color: t.$color-primary;
+  font-size: 1.2rem;
+}
+
+.puntvenda-cta {
+  display: inline-flex;
+  min-height: t.$touch-min;
+  align-items: center;
+  font-weight: 600;
+  color: t.$color-primary;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-family: t.$font-content;
+  &:hover,
+  &:focus-visible {
+    color: t.$color-primary-light;
+  }
+  &:focus-visible {
+    outline: 2px solid t.$color-mint;
+    outline-offset: 2px;
+  }
+}

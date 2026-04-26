@@ -1,0 +1,22 @@
+---
+description: New routes — lazy components, Transloco + meta in both languages, SEO
+globs: saovalles/src/app/features/**/*.{ts,html}
+alwaysApply: false
+---
+
+# Angular features (`saovalles/src/app/features/`)
+
+## Routing
+
+- Register lazy routes in **`saovalles/src/app/app.routes.ts`** as children of `MainLayoutComponent` unless you intentionally need a bare layout.
+- Optional nav entry: **`saovalles/src/app/core/navigation/nav.model.ts`** + **`nav.*`** keys in **`public/i18n/ca.json`** and **`es.json`**.
+
+## i18n and SEO
+
+- **Never** add user-visible strings for CA/ES only in templates without Transloco keys.
+- For each new page: add **`meta.<page>.title`** and **`meta.<page>.description`** in **both** `ca.json` and `es.json`.
+- In the component: inject **`SeoService`** and call **`bindPageToTranslations(destroyRef, 'meta.<page>.title', 'meta.<page>.description')`** once (same pattern as `informacio`, `orders`, etc.).
+
+## Calling the order API from Angular
+
+- Use **`OrdersApiService`** and **`environment.apiBasePath`** (`/api`). Do not hardcode `http://localhost:3000` in feature code — proxy handles dev.

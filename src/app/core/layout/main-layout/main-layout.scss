@@ -1,0 +1,19 @@
+@use '../../../../styles/tokens' as t;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.app-main {
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: t.$max-content;
+  margin-inline: auto;
+  padding: t.$space-4 t.$space-3 t.$space-8;
+
+  @media (min-width: t.$bp-md) {
+    padding: t.$space-6 t.$space-4 t.$space-10;
+  }
+}

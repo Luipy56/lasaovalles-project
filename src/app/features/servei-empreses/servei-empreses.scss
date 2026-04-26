@@ -1,0 +1,215 @@
+@use '../../../styles/tokens' as t;
+
+.servei__banner {
+  margin: 0 0 t.$space-5;
+  border-radius: t.$radius;
+  overflow: hidden;
+  box-shadow: t.$shadow;
+  max-height: 22rem;
+  background: t.$color-surface-subtle;
+}
+
+.servei__img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 22rem;
+  display: block;
+}
+
+.servei__h2 {
+  font-size: clamp(1.2rem, 1rem + 0.8vw, 1.5rem);
+  color: t.$color-primary;
+  margin: 0 0 t.$space-3;
+  text-align: left;
+}
+
+.servei__h2--accent {
+  text-align: center;
+  margin-top: t.$space-2;
+}
+
+.servei__intro-grid {
+  display: grid;
+  gap: t.$space-5;
+  margin-bottom: t.$space-6;
+  @media (min-width: t.$bp-md) {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.servei__intro-block {
+  padding: t.$space-4;
+  background: t.$color-surface;
+  border-radius: t.$radius;
+  border: 1px solid rgba(42, 84, 52, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.servei__prose {
+  max-width: none;
+  margin-inline: 0;
+  text-align: left;
+}
+
+.servei__offer {
+  margin-bottom: t.$space-6;
+  padding: t.$space-4 t.$space-3 t.$space-5;
+  background: t.$color-surface-subtle;
+  border-radius: t.$radius;
+  border: 1px solid rgba(42, 84, 52, 0.12);
+}
+
+.servei__info-link-wrap {
+  margin: t.$space-2 0 t.$space-3;
+  text-align: left;
+}
+
+.servei__info-link {
+  font-weight: 600;
+  color: t.$color-primary;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  &:focus-visible {
+    outline: 2px solid t.$color-mint;
+    outline-offset: 2px;
+  }
+}
+
+.servei__price-list {
+  margin: 0 0 t.$space-4;
+  padding-left: 1.25rem;
+  color: t.$color-text-muted;
+  font-size: 1.05rem;
+  li {
+    margin-bottom: t.$space-2;
+  }
+}
+
+.servei__mail-cta {
+  margin: t.$space-4 0 0;
+}
+
+.servei__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: t.$touch-min;
+  padding: 0.65rem 1.25rem;
+  border-radius: t.$radius;
+  font-weight: 600;
+  text-decoration: none;
+  background: t.$color-primary;
+  color: #fff;
+  border: 2px solid t.$color-primary;
+  font-family: t.$font-content;
+  &:focus-visible {
+    outline: 3px solid t.$color-mint;
+    outline-offset: 2px;
+  }
+}
+
+.servei__stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: t.$space-3;
+  margin-bottom: t.$space-6;
+  padding: t.$space-5 t.$space-3;
+  background: linear-gradient(160deg, t.$color-primary 0%, t.$color-primary-dark 100%);
+  border-radius: t.$radius;
+  color: #fff;
+  text-align: center;
+  @media (min-width: t.$bp-md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.servei__stat-label {
+  margin: 0 0 t.$space-2;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  opacity: 0.95;
+}
+
+.servei__stat-value {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.servei__pillars {
+  display: grid;
+  gap: t.$space-4;
+  margin-bottom: t.$space-6;
+  @media (min-width: t.$bp-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.servei__pillar {
+  padding: t.$space-4;
+  background: t.$color-surface;
+  border-radius: t.$radius;
+  border: 1px solid rgba(42, 84, 52, 0.1);
+  box-shadow: t.$shadow;
+}
+
+.servei__pillar-title {
+  margin: 0 0 t.$space-2;
+  font-size: 1.1rem;
+  color: t.$color-primary;
+}
+
+.servei__collab {
+  margin-bottom: t.$space-5;
+  padding-top: t.$space-4;
+  border-top: 1px solid rgba(42, 84, 52, 0.15);
+}
+
+.servei__collab-heading {
+  text-align: center;
+  font-size: 1.15rem;
+  color: t.$color-primary;
+  margin: 0 0 t.$space-4;
+}
+
+.servei__collab-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: t.$space-3;
+  align-items: center;
+  justify-items: center;
+  @media (min-width: t.$bp-md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.servei__collab-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 5rem;
+  background: t.$color-surface;
+  border: 1px solid rgba(42, 84, 52, 0.1);
+  border-radius: t.$radius;
+  padding: t.$space-2;
+}
+
+.servei__collab-img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.servei__footer-note {
+  text-align: center;
+  font-style: italic;
+  color: t.$color-text-muted;
+}

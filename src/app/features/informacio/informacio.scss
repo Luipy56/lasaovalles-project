@@ -1,0 +1,109 @@
+@use '../../../styles/tokens' as t;
+
+.page--informacio {
+  padding-bottom: t.$space-6;
+}
+
+.informacio-cta {
+  margin: t.$space-5 0;
+  padding: t.$space-4 t.$space-4;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(168, 201, 163, 0.35), rgba(232, 240, 228, 0.9));
+  border: 1px solid rgba(42, 84, 52, 0.2);
+  border-radius: t.$radius;
+  box-shadow: t.$shadow;
+}
+
+.informacio-cta__h {
+  margin: 0 0 t.$space-2;
+  font-family: t.$font-content;
+  font-size: 1.25rem;
+  color: t.$color-primary-dark;
+}
+
+.informacio-cta__p {
+  margin-bottom: t.$space-3;
+}
+
+.informacio-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: t.$touch-min;
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: t.$radius;
+  background: t.$color-primary;
+  color: #fff;
+  &:hover,
+  &:focus-visible {
+    background: t.$color-primary-dark;
+    color: #fff;
+  }
+}
+
+.page__sub {
+  font-size: 1.1rem;
+  color: t.$color-primary;
+  text-align: center;
+  font-weight: 600;
+  margin: 0 0 t.$space-4;
+}
+
+.informacio-routes__h2 {
+  text-align: center;
+  margin-top: t.$space-6;
+}
+
+.informacio-routes__intro {
+  margin-bottom: t.$space-5;
+}
+
+.delivery-day {
+  margin-bottom: t.$space-5;
+  padding: t.$space-4;
+  background: t.$color-surface;
+  border-radius: t.$radius;
+  box-shadow: t.$shadow;
+  border: 1px solid rgba(42, 84, 52, 0.12);
+}
+
+.delivery-day__title {
+  margin-top: 0;
+  margin-bottom: t.$space-3;
+  color: t.$color-primary;
+  font-size: 1.25rem;
+  text-align: left;
+  border-bottom: 2px solid t.$color-mint;
+  padding-bottom: t.$space-2;
+}
+
+.delivery-day__block {
+  margin-bottom: t.$space-3;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.delivery-day__label {
+  font-weight: 700;
+  color: t.$color-primary-light;
+  margin: 0 0 t.$space-2;
+  font-size: 0.95rem;
+}
+
+.delivery-day__list {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: t.$color-text-muted;
+  columns: 1;
+  @media (min-width: 30rem) {
+    columns: 2;
+    column-gap: t.$space-4;
+  }
+  li {
+    break-inside: avoid;
+    margin-bottom: 0.35rem;
+  }
+}

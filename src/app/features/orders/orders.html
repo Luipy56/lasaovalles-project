@@ -1,0 +1,108 @@
+<article class="page page--orders">
+  <h1 class="page-title">{{ 'nav.ordersOnline' | transloco }}</h1>
+  <p class="prose">{{ 'orders.intro' | transloco }}</p>
+
+  @if (loadError()) {
+    <p class="orders__alert orders__alert--error" role="alert">{{ 'orders.loadError' | transloco }}</p>
+  } @else if (!catalog()) {
+    <p class="orders__loading">{{ 'orders.loading' | transloco }}</p>
+  } @else {
+    <div class="orders__nav-fab" role="group" [attr.aria-label]="'orders.scrollPrev' | transloco">
+      <button type="button" class="orders__fab" (click)="scrollPrev()" [attr.aria-label]="'orders.scrollPrev' | transloco">↑</button>
+      <button type="button" class="orders__fab" (click)="scrollNext()" [attr.aria-label]="'orders.scrollNext' | transloco">↓</button>
+    </div>
+
+    @for (cat of catalog()!.categories; track cat.id) {
+      <section class="orders__cat" [id]="'cat-' + cat.id">
+        <h2 class="orders__cat-title">{{ catTitle(cat) }}</h2>
+        <div class="orders__table-wrap">
+          <table class="orders__table">
+            <thead>
+              <tr>
+                <th>{{ 'orders.tableProduct' | transloco }}</th>
+                <th>{{ 'orders.tableOrigin' | transloco }}</th>
+                <th>{{ 'orders.tableUnit' | transloco }}</th>
+                <th>{{ 'orders.tablePrice' | transloco }}</th>
+                <th>{{ 'orders.tableQty' | transloco }}</th>
+                <th>{{ 'orders.tableSubtotal' | transloco }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (it of cat.items; track it.id) {
+                <tr>
+                  <td>{{ itemName(it) }}</td>
+                  <td>{{ itemOrigin(it) }}</td>
+                  <td>{{ itemUnit(it) }}</td>
+                  <td>{{ it.price | number: '1.2-2' }} €</td>
+                  <td>
+                    <input
+                      class="orders__qty"
+                      type="number"
+                      min="0"
+                      step="0.001"
+                      [name]="'q-' + it.id"
+                      [ngModel]="qty(it.id)"
+                      (ngModelChange)="setQty(it.id, $event)"
+                    />
+                  </td>
+                  <td>{{ lineSubtotal(it) | number: '1.2-2' }} €</td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </section>
+    }
+
+    <section class="orders__summary">
+      <p class="orders__total-line">
+        <strong>{{ 'orders.total' | transloco }}:</strong>
+        <span>{{ grandTotal() | number: '1.2-2' }} €</span>
+      </p>
+    </section>
+
+    <section class="orders__customer">
+      <h2 class="orders__customer-h">{{ 'orders.customerH' | transloco }}</h2>
+      <label class="orders__field">
+        <span>{{ 'orders.name' | transloco }}</span>
+        <input type="text" autocomplete="name" [ngModel]="customerName()" (ngModelChange)="customerName.set($event)" name="custName" required />
+      </label>
+      <label class="orders__field">
+        <span>{{ 'orders.email' | transloco }}</span>
+        <input type="email" autocomplete="email" [ngModel]="customerEmail()" (ngModelChange)="customerEmail.set($event)" name="custEmail" required />
+      </label>
+      <label class="orders__field">
+        <span>{{ 'orders.phone' | transloco }}</span>
+        <input type="tel" autocomplete="tel" [ngModel]="phone()" (ngModelChange)="phone.set($event)" name="custPhone" />
+      </label>
+      <label class="orders__field">
+        <span>{{ 'orders.address' | transloco }}</span>
+        <textarea rows="4" [ngModel]="shippingAddress()" (ngModelChange)="shippingAddress.set($event)" name="custAddr" required></textarea>
+      </label>
+      <label class="orders__check">
+        <input type="checkbox" [ngModel]="acceptPolicy()" (ngModelChange)="acceptPolicy.set($event)" name="accept" />
+        <span>{{ 'orders.accept' | transloco }}</span>
+      </label>
+
+      @if (submitError() === 'accept') {
+        <p class="orders__alert orders__alert--error" role="alert">{{ 'orders.errorAccept' | transloco }}</p>
+      }
+      @if (submitError() === 'lines') {
+        <p class="orders__alert orders__alert--error" role="alert">{{ 'orders.errorLines' | transloco }}</p>
+      }
+      @if (submitError() === 'mail') {
+        <p class="orders__alert orders__alert--error" role="alert">{{ 'orders.errorMail' | transloco }}</p>
+      }
+      @if (submitError() === 'generic') {
+        <p class="orders__alert orders__alert--error" role="alert">{{ 'orders.errorGeneric' | transloco }}</p>
+      }
+      @if (submitSuccess()) {
+        <p class="orders__alert orders__alert--ok" role="status">{{ 'orders.success' | transloco }}</p>
+      }
+
+      <button type="button" class="orders__submit" (click)="submit()" [disabled]="submitting()">
+        {{ submitting() ? ('orders.submitting' | transloco) : ('orders.submit' | transloco) }}
+      </button>
+    </section>
+  }
+</article>

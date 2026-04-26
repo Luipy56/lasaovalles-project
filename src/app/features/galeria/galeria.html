@@ -1,0 +1,34 @@
+<article class="page page--galeria">
+  <h1 class="page-title">{{ 'galeria.title' | transloco }}</h1>
+  <p class="prose galeria__intro">{{ 'galeria.body' | transloco }}</p>
+  <ul class="galeria__grid">
+    @for (img of images; track img.src) {
+      <li class="galeria__cell">
+        <img
+          [ngSrc]="img.src"
+          [width]="img.w"
+          [height]="img.h"
+          sizes="(max-width: 40rem) 100vw, 33vw"
+          class="galeria__img"
+          [alt]="'galeria.imageAlt' | transloco"
+        />
+      </li>
+    }
+  </ul>
+
+  <section class="galeria__video" aria-labelledby="galeria-video-h">
+    <h2 class="galeria__video-heading" id="galeria-video-h">{{ 'galeria.videoHeading' | transloco }}</h2>
+    <p class="galeria__video-lead">{{ 'galeria.videoIntro' | transloco }}</p>
+    <div class="galeria__video-embed">
+      <iframe
+        [title]="'galeria.iframeTitle' | transloco"
+        class="galeria__video-iframe"
+        src="https://www.youtube.com/embed/Mnnu_LffuLU?rel=0"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin"
+      ></iframe>
+    </div>
+  </section>
+</article>

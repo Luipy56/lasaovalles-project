@@ -1,0 +1,96 @@
+<article class="page page--servei">
+  <h1 class="page-title">{{ 'servei.title' | transloco }}</h1>
+
+  <div class="servei__banner">
+    <img
+      ngSrc="/images/servei-produce.jpg"
+      width="1200"
+      height="800"
+      priority
+      class="servei__img"
+      [alt]="'servei.title' | transloco"
+    />
+  </div>
+
+  <div class="servei__intro-grid">
+    <section class="servei__intro-block" aria-labelledby="servei-who-h">
+      <h2 class="servei__h2" id="servei-who-h">{{ 'servei.aboutWhoTitle' | transloco }}</h2>
+      <p class="prose servei__prose">{{ 'servei.aboutWhoText' | transloco }}</p>
+    </section>
+    <section class="servei__intro-block" aria-labelledby="servei-work-h">
+      <h2 class="servei__h2" id="servei-work-h">{{ 'servei.workTitle' | transloco }}</h2>
+      <p class="prose servei__prose">{{ 'servei.workText' | transloco }}</p>
+    </section>
+  </div>
+
+  <section class="servei__offer" aria-labelledby="servei-offer-h">
+    <h2 class="servei__h2 servei__h2--accent" id="servei-offer-h">{{ 'servei.offerTitle' | transloco }}</h2>
+    <p class="prose servei__prose">{{ 'servei.offerP1' | transloco }}</p>
+    <p class="servei__info-link-wrap">
+      <a class="servei__info-link" routerLink="/informacio">{{ 'servei.offerInfoLink' | transloco }}</a>
+    </p>
+    <p class="prose servei__prose">{{ 'servei.offerP2' | transloco }}</p>
+    <p class="prose servei__prose"><strong>{{ 'servei.offerPricingIntro' | transloco }}</strong></p>
+    <ul class="servei__price-list">
+      <li>{{ 'servei.offerBasket1' | transloco }}</li>
+      <li>{{ 'servei.offerBasket2' | transloco }}</li>
+    </ul>
+    <p class="prose servei__prose">{{ 'servei.offerClosing' | transloco }}</p>
+    <p class="servei__mail-cta">
+      <a class="btn servei__btn" href="mailto:lasao.valles@gmail.com">{{ 'servei.mailCta' | transloco }}</a>
+    </p>
+  </section>
+
+  <div class="servei__stats" role="group" [attr.aria-label]="'servei.statsAria' | transloco">
+    <div class="servei__stat">
+      <p class="servei__stat-label">{{ 'servei.statClients' | transloco }}</p>
+      <p class="servei__stat-value">{{ 'servei.statClientsValue' | transloco }}</p>
+    </div>
+    <div class="servei__stat">
+      <p class="servei__stat-label">{{ 'servei.statLocations' | transloco }}</p>
+      <p class="servei__stat-value">{{ 'servei.statLocationsValue' | transloco }}</p>
+    </div>
+    <div class="servei__stat">
+      <p class="servei__stat-label">{{ 'servei.statStaff' | transloco }}</p>
+      <p class="servei__stat-value">{{ 'servei.statStaffValue' | transloco }}</p>
+    </div>
+    <div class="servei__stat">
+      <p class="servei__stat-label">{{ 'servei.statYears' | transloco }}</p>
+      <p class="servei__stat-value">{{ 'servei.statYearsValue' | transloco }}</p>
+    </div>
+  </div>
+
+  <div class="servei__pillars">
+    <section class="servei__pillar">
+      <h3 class="servei__pillar-title">{{ 'servei.pillarCertsTitle' | transloco }}</h3>
+      <p class="prose servei__prose">{{ 'servei.pillarCertsText' | transloco }}</p>
+    </section>
+    <section class="servei__pillar">
+      <h3 class="servei__pillar-title">{{ 'servei.pillarExpTitle' | transloco }}</h3>
+      <p class="prose servei__prose">{{ 'servei.pillarExpText' | transloco }}</p>
+    </section>
+    <section class="servei__pillar">
+      <h3 class="servei__pillar-title">{{ 'servei.pillarQualityTitle' | transloco }}</h3>
+      <p class="prose servei__prose">{{ 'servei.pillarQualityText' | transloco }}</p>
+    </section>
+  </div>
+
+  <section class="servei__collab" aria-labelledby="servei-collab-h">
+    <h2 class="servei__collab-heading" id="servei-collab-h">{{ 'servei.collabHeading' | transloco }}</h2>
+    <ul class="servei__collab-grid">
+      @for (p of partners; track p.src) {
+        <li class="servei__collab-item">
+          <img
+            [ngSrc]="p.src"
+            [width]="p.w"
+            [height]="p.h"
+            class="servei__collab-img"
+            [alt]="'newpage.partnersImageAlt' | transloco"
+          />
+        </li>
+      }
+    </ul>
+  </section>
+
+  <p class="prose servei__footer-note">{{ 'servei.footerNote' | transloco }}</p>
+</article>

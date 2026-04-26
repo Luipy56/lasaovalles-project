@@ -1,0 +1,36 @@
+<section class="home-hero">
+  <div class="home-hero__media">
+    <img
+      ngSrc="/images/hero-hort.jpg"
+      width="1200"
+      height="800"
+      priority
+      class="home-hero__img"
+      [alt]="'home.heroAlt' | transloco"
+    />
+  </div>
+  <div class="home-hero__content page">
+    <h1 class="page-title home-hero__title">{{ 'home.title' | transloco }}</h1>
+    <p class="home-hero__lead">{{ 'home.lead' | transloco }}</p>
+    <p class="home-hero__text">{{ 'home.body' | transloco }}</p>
+    <div class="home-hero__actions">
+      <a class="btn" routerLink="/informacio">{{ 'home.ctaOrder' | transloco }}</a>
+      <a class="btn btn--secondary" routerLink="/punt-de-venda">{{ 'home.ctaLocation' | transloco }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="home-cols page">
+  <article class="card">
+    <h2>{{ 'home.col1Title' | transloco }}</h2>
+    <p>{{ 'home.col1Text' | transloco }}</p>
+  </article>
+  <article class="card">
+    <h2>{{ 'home.col2Title' | transloco }}</h2>
+    <p>{{ 'home.col2Text' | transloco }}</p>
+  </article>
+  <article class="card">
+    <h2>{{ 'home.col3Title' | transloco }}</h2>
+    <p>{{ 'home.col3Text' | transloco }}</p>
+  </article>
+</section>

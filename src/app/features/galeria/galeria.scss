@@ -1,0 +1,84 @@
+@use '../../../styles/tokens' as t;
+
+.galeria__intro {
+  margin-bottom: t.$space-5;
+  text-align: center;
+}
+
+.galeria__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: t.$space-3;
+  @media (min-width: 30rem) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: t.$bp-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.galeria__cell {
+  position: relative;
+  border-radius: t.$radius;
+  overflow: hidden;
+  background: t.$color-surface-subtle;
+  border: 1px solid rgba(42, 84, 52, 0.1);
+  min-height: 8rem;
+}
+
+.galeria__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.galeria__video {
+  margin-top: t.$space-6;
+  padding-top: t.$space-4;
+  border-top: 1px solid rgba(42, 84, 52, 0.15);
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.galeria__video-heading {
+  text-align: center;
+  margin: 0 0 t.$space-2;
+  color: t.$color-primary;
+}
+
+.galeria__video-lead {
+  text-align: center;
+  margin: 0 0 t.$space-4;
+  color: t.$color-text;
+  font-weight: 600;
+  font-size: 1.05rem;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// 16:9 responsive YouTube (matches original .youtube-padding-fix intent)
+.galeria__video-embed {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  background: t.$color-surface-subtle;
+  border-radius: t.$radius;
+  box-shadow: t.$shadow;
+}
+
+.galeria__video-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

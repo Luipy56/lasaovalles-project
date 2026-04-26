@@ -1,0 +1,124 @@
+@use '../../../styles/tokens' as t;
+
+.admin {
+  max-width: 100%;
+  padding-bottom: t.$space-8;
+}
+
+.admin__title {
+  font-family: t.$font-content;
+  color: t.$color-primary-dark;
+}
+
+.admin__intro {
+  max-width: 40rem;
+}
+
+.admin__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: t.$space-2;
+  margin: t.$space-3 0;
+}
+
+.admin__token {
+  flex: 1 1 16rem;
+  min-height: t.$touch-min;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(t.$color-primary-dark, 0.3);
+  border-radius: t.$radius;
+}
+
+.admin__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: t.$space-2;
+  margin: t.$space-4 0;
+  align-items: center;
+}
+
+.admin__btn {
+  min-height: 2.5rem;
+  padding: 0 1rem;
+  border-radius: t.$radius;
+  border: 1px solid rgba(t.$color-primary-dark, 0.35);
+  background: t.$color-surface;
+  cursor: pointer;
+  font: inherit;
+  &--ghost {
+    background: transparent;
+  }
+  &--active {
+    background: t.$color-surface-subtle;
+    border-color: t.$color-primary;
+  }
+  &--primary {
+    background: t.$color-primary;
+    color: #fff;
+    border-color: t.$color-primary;
+  }
+  &:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+}
+
+.admin__cat {
+  margin-bottom: t.$space-6;
+}
+
+.admin__cat-h {
+  font-size: 1.1rem;
+  margin-bottom: t.$space-2;
+}
+
+.admin__wrap {
+  overflow-x: auto;
+}
+
+.admin__table {
+  width: 100%;
+  min-width: 42rem;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  th,
+  td {
+    border: 1px solid rgba(t.$color-primary-dark, 0.15);
+    padding: 0.35rem 0.5rem;
+    vertical-align: top;
+  }
+  th {
+    background: t.$color-surface-subtle;
+    text-align: left;
+  }
+}
+
+.admin__mono {
+  font-family: ui-monospace, monospace;
+  white-space: nowrap;
+}
+
+.admin__cell {
+  width: 100%;
+  min-width: 6rem;
+  font: inherit;
+  padding: 0.25rem 0.35rem;
+  &--num {
+    width: 5rem;
+    min-width: 5rem;
+  }
+}
+
+.admin__ok {
+  color: t.$color-primary-dark;
+  background: rgba(168, 201, 163, 0.35);
+  padding: t.$space-2 t.$space-3;
+  border-radius: t.$radius;
+}
+
+.admin__err {
+  color: #6b1c1c;
+  background: #fdeaea;
+  padding: t.$space-2 t.$space-3;
+  border-radius: t.$radius;
+}

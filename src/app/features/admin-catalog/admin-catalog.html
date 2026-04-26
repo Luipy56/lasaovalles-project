@@ -1,0 +1,93 @@
+<div class="admin">
+  <h1 class="admin__title">{{ 'adminCatalog.title' | transloco }}</h1>
+
+  @if (!token()) {
+    <p class="admin__intro">{{ 'adminCatalog.intro' | transloco }}</p>
+    <div class="admin__row">
+      <input
+        class="admin__token"
+        type="password"
+        autocomplete="off"
+        [ngModel]="tokenInput()"
+        (ngModelChange)="tokenInput.set($event)"
+        name="admintoken"
+        [attr.placeholder]="'adminCatalog.tokenPh' | transloco"
+      />
+      <button type="button" class="admin__btn" (click)="connect()">{{ 'adminCatalog.connect' | transloco }}</button>
+    </div>
+  } @else {
+    <div class="admin__toolbar">
+      <button type="button" class="admin__btn admin__btn--ghost" (click)="disconnect()">{{ 'adminCatalog.disconnect' | transloco }}</button>
+      <button type="button" class="admin__btn" [class.admin__btn--active]="mode() === 'view'" (click)="setMode('view')">
+        {{ 'adminCatalog.modeView' | transloco }}
+      </button>
+      <button type="button" class="admin__btn" [class.admin__btn--active]="mode() === 'edit'" (click)="setMode('edit')">
+        {{ 'adminCatalog.modeEdit' | transloco }}
+      </button>
+      <button type="button" class="admin__btn admin__btn--ghost" (click)="downloadJson()">{{ 'adminCatalog.download' | transloco }}</button>
+      <button type="button" class="admin__btn admin__btn--primary" (click)="save()" [disabled]="saving() || mode() === 'view'">
+        {{ saving() ? ('adminCatalog.saving' | transloco) : ('adminCatalog.save' | transloco) }}
+      </button>
+    </div>
+
+    @if (loadError()) {
+      <p class="admin__err">{{ 'adminCatalog.loadError' | transloco }}</p>
+    } @else if (!catalog()) {
+      <p>{{ 'adminCatalog.loading' | transloco }}</p>
+    } @else {
+      @if (saveOk()) {
+        <p class="admin__ok">{{ 'adminCatalog.saveOk' | transloco }}</p>
+      }
+      @if (saveErr()) {
+        <p class="admin__err">{{ 'adminCatalog.saveErr' | transloco }}</p>
+      }
+
+      @for (cat of catalog()!.categories; track cat.id; let ci = $index) {
+        <section class="admin__cat">
+          <h2 class="admin__cat-h">{{ cat.titleCa }} / {{ cat.titleEs }}</h2>
+          <div class="admin__wrap">
+            <table class="admin__table">
+              <thead>
+                <tr>
+                  <th>id</th>
+                  <th>nameCa</th>
+                  <th>nameEs</th>
+                  <th>unitCa</th>
+                  <th>price</th>
+                </tr>
+              </thead>
+              <tbody>
+                @for (it of cat.items; track it.id; let ii = $index) {
+                  <tr>
+                    <td class="admin__mono">{{ it.id }}</td>
+                    @if (mode() === 'edit') {
+                      <td><input class="admin__cell" type="text" [ngModel]="it.nameCa" (ngModelChange)="updateItemName(ci, ii, 'nameCa', $event)" [name]="'nc-' + it.id" /></td>
+                      <td><input class="admin__cell" type="text" [ngModel]="it.nameEs" (ngModelChange)="updateItemName(ci, ii, 'nameEs', $event)" [name]="'ne-' + it.id" /></td>
+                      <td>{{ it.unitCa }}</td>
+                      <td>
+                        <input
+                          class="admin__cell admin__cell--num"
+                          type="number"
+                          min="0"
+                          step="0.01"
+                          [ngModel]="it.price"
+                          (ngModelChange)="updateItemPrice(ci, ii, $event)"
+                          [name]="'p-' + it.id"
+                        />
+                      </td>
+                    } @else {
+                      <td>{{ it.nameCa }}</td>
+                      <td>{{ it.nameEs }}</td>
+                      <td>{{ it.unitCa }}</td>
+                      <td>{{ it.price }}</td>
+                    }
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        </section>
+      }
+    }
+  }
+</div>

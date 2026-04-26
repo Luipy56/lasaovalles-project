@@ -1,0 +1,37 @@
+// Design tokens (La Saó Vallès — light greens / natural produce palette)
+$color-primary: #2a5434;
+$color-primary-dark: #1e3d25;
+$color-primary-light: #3d6b4a;
+$color-accent: #4a7c4f;
+$color-mint: #a8c9a3;
+$color-sage: #6b8f6a;
+
+$color-text: #1f2a1f;
+$color-text-muted: #3a453a;
+$color-bg: #f3f6f0;
+$color-surface: #fbfcf9;
+$color-surface-subtle: #e8f0e6;
+$color-hero: #1a2e1a;
+$header-bg: #2a5434;
+
+$font-sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+$font-content: 'Lora', 'Georgia', 'Times New Roman', serif;
+
+$max-content: 56rem;
+$max-reading: 42rem;
+
+$space-1: 0.25rem;
+$space-2: 0.5rem;
+$space-3: 1rem;
+$space-4: 1.5rem;
+$space-5: 2rem;
+$space-6: 2.5rem;
+$space-8: 3.5rem;
+$space-10: 4.5rem;
+
+$bp-md: 48rem;
+$bp-lg: 64rem;
+
+$touch-min: 44px;
+$radius: 8px;
+$shadow: 0 4px 20px rgba(32, 56, 32, 0.1);

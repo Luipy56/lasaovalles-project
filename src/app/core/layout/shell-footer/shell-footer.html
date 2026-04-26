@@ -1,0 +1,45 @@
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <p class="site-footer__line">{{ 'footer.copyright' | transloco }}</p>
+    <p class="site-footer__line">
+      <a href="tel:+34625037770" class="site-footer__link">{{ 'footer.callUs' | transloco }}</a>
+      <span aria-hidden="true" class="site-footer__sep">·</span>
+      <a href="mailto:lasao.valles@gmail.com" class="site-footer__link">lasao.valles@gmail.com</a>
+    </p>
+    <p class="site-footer__line">
+      <a class="site-footer__link" routerLink="/aviso-legal">
+        {{ 'nav.avisLegal' | transloco }}
+      </a>
+      <span class="site-footer__sep" aria-hidden="true">·</span>
+      <a class="site-footer__link" routerLink="/informacio">
+        {{ 'footer.orders' | transloco }}
+      </a>
+    </p>
+    <p class="site-footer__line site-footer__socials">
+      <a
+        href="https://www.facebook.com/La-Sa%C3%B3-Vall%C3%A8s-101049881370519"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="site-footer__social"
+        >Facebook</a
+      >
+      <a href="https://www.instagram.com/lasaovalles" target="_blank" rel="noopener noreferrer" class="site-footer__social"
+        >Instagram</a
+      >
+    </p>
+    <p class="site-footer__line site-footer__disclaimer">
+      <small>{{ 'footer.disclaimer' | transloco }}</small>
+    </p>
+    <p class="site-footer__line site-footer__meta">
+      <span class="site-footer__meta-text">{{ 'footer.versionLine' | transloco: { version: appVersion } }}</span>
+      <span aria-hidden="true" class="site-footer__sep">·</span>
+      <a
+        class="site-footer__meta-link"
+        href="https://ldeluipy.es"
+        [attr.target]="'_blank'"
+        [attr.rel]="'noopener noreferrer'"
+        >{{ 'footer.developedBy' | transloco }}</a
+      >
+    </p>
+  </div>
+</footer>

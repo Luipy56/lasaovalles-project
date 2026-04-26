@@ -1,0 +1,21 @@
+@use '../../../styles/tokens' as t;
+
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    margin: 0 0 t.$space-3;
+  }
+}
+
+.contact-link {
+  min-height: t.$touch-min;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: t.$color-primary;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

@@ -1,0 +1,124 @@
+@use '../../../styles/tokens' as t;
+
+.home-hero {
+  position: relative;
+  margin-bottom: t.$space-6;
+  border-radius: t.$radius;
+  overflow: hidden;
+  box-shadow: t.$shadow;
+  margin-left: t.$space-2;
+  margin-right: t.$space-2;
+  @media (min-width: t.$bp-md) {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90rem;
+  }
+}
+
+.home-hero__media {
+  position: relative;
+  min-height: 16rem;
+  @media (min-width: 40rem) {
+    min-height: 20rem;
+  }
+}
+
+.home-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  min-height: 16rem;
+}
+
+.home-hero__content {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  max-width: none;
+  width: 100%;
+  text-align: center;
+  padding: t.$space-4 t.$space-3 t.$space-5;
+  background: linear-gradient(180deg, t.$color-surface-subtle 0%, t.$color-bg 100%);
+
+  .page-title {
+    color: t.$color-primary;
+  }
+}
+
+.home-hero__title {
+  text-shadow: none;
+}
+
+.home-hero__lead {
+  font-size: clamp(1.1rem, 0.95rem + 0.5vw, 1.35rem);
+  color: t.$color-primary;
+  font-weight: 600;
+  margin: 0 0 t.$space-3;
+}
+
+.home-hero__text {
+  max-width: t.$max-reading;
+  margin: 0 auto t.$space-4;
+  color: t.$color-text-muted;
+}
+
+.home-hero__actions {
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-2;
+  align-items: stretch;
+  @media (min-width: 30rem) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: t.$touch-min;
+  padding: 0.65rem 1.25rem;
+  border-radius: t.$radius;
+  font-weight: 600;
+  text-decoration: none;
+  background: t.$color-primary;
+  color: #fff;
+  border: 2px solid t.$color-primary;
+  font-family: t.$font-content;
+  &--secondary {
+    background: t.$color-surface;
+    color: t.$color-primary;
+  }
+  &:focus-visible {
+    outline: 3px solid t.$color-mint;
+    outline-offset: 2px;
+  }
+}
+
+.home-cols {
+  display: grid;
+  gap: t.$space-4;
+  @media (min-width: t.$bp-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background: t.$color-surface;
+  border-radius: t.$radius;
+  padding: t.$space-4;
+  box-shadow: t.$shadow;
+  border: 1px solid rgba(42, 84, 52, 0.1);
+  h2 {
+    font-size: 1.1rem;
+    margin-top: 0;
+    color: t.$color-primary;
+  }
+  p {
+    font-size: 0.95rem;
+    color: t.$color-text-muted;
+  }
+}

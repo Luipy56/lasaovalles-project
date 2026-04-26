@@ -1,0 +1,255 @@
+{
+  "a11y": {
+    "menu": "Abrir menú de navegación",
+    "close": "Cerrar",
+    "closeMenu": "Cerrar el menú"
+  },
+  "header": { "lang": "Selector de idioma" },
+  "nav": {
+    "inici": "Inicio",
+    "quiSom": "Quiénes somos",
+    "galeria": "Galería",
+    "informacio": "Cómo pedir",
+    "puntVenda": "Punto de venta",
+    "contacte": "Contacto",
+    "avisLegal": "Aviso legal",
+    "serveiEmpreses": "Servicio a empresas",
+    "drawerTitle": "Menú",
+    "ordersOnline": "Pedido en línea"
+  },
+  "meta": {
+    "home": {
+      "title": "Inicio | La Saó Vallès",
+      "description": "Bienvenidos a La Saó Vallès, fruta y verdura de calidad en el Vallès, de la huerta a la mesa."
+    },
+    "newpage": {
+      "title": "Quiénes somos | La Saó Vallès",
+      "description": "Conozca a La Saó Vallès, trabajo de proximidad y un equipo con experiencia en el Vallès."
+    },
+    "galeria": { "title": "Galería | La Saó Vallès", "description": "Fotos, el día a día en vídeo y el trabajo en La Saó Vallès." },
+    "informacio": { "title": "Cómo pedir | La Saó Vallès", "description": "Cómo realizar un pedido, franja de reparto y datos bancarios." },
+    "puntVenda": { "title": "Punto de venta | La Saó Vallès", "description": "Dónde estamos, horarios, mercadillo y cesta de compra." },
+    "contacto": { "title": "Contacto | La Saó Vallès", "description": "Teléfono, correo y redes de La Saó Vallès." },
+    "aviso": { "title": "Aviso legal | La Saó Vallès", "description": "Aviso legal y condiciones de uso de este sitio web." },
+    "servei": { "title": "Servicio a empresas | La Saó Vallès", "description": "Cestas para empresas, fruta en el lugar de trabajo, tarifas y colaboradores. La Saó Vallès." },
+    "notFound": { "title": "Página no encontrada | La Saó Vallès", "description": "La página solicitada no existe." },
+    "orders": {
+      "title": "Pedido en línea | La Saó Vallès",
+      "description": "Rellena el pedido semanal con el catálogo actual: cantidades, resumen y envío por correo al titular y copia para ti."
+    }
+  },
+  "orders": {
+    "intro": "Selecciona las cantidades al final de cada fila. El total se calcula solo. Al terminar, rellena los datos de contacto y envía el pedido.",
+    "loading": "Cargando catálogo…",
+    "loadError": "No se ha podido cargar el catálogo. Inténtalo más tarde o contacta con el titular.",
+    "tableProduct": "Producto",
+    "tableOrigin": "Procedencia",
+    "tableUnit": "Unidad",
+    "tablePrice": "Precio",
+    "tableQty": "Cantidad",
+    "tableSubtotal": "Subtotal",
+    "total": "Total",
+    "scrollPrev": "Subir categoría",
+    "scrollNext": "Bajar categoría",
+    "customerH": "Datos de contacto y entrega",
+    "name": "Nombre y apellidos",
+    "email": "Correo electrónico",
+    "phone": "Teléfono (opcional)",
+    "address": "Dirección completa de entrega",
+    "accept": "He leído la información de la página «Cómo pedir» y acepto que me contacten por correo en relación con este pedido.",
+    "submit": "Enviar pedido",
+    "submitting": "Enviando…",
+    "success": "Pedido enviado. Revisa el correo: recibirás una copia y el titular recibirá el detalle completo.",
+    "errorGeneric": "No se ha podido enviar. Inténtalo de nuevo o llama al titular.",
+    "errorMail": "El servicio de correo aún no está configurado en el servidor. Contacta con el titular por teléfono o correo.",
+    "errorAccept": "Debes marcar la aceptación para continuar.",
+    "errorLines": "Añade al menos una cantidad mayor que 0 en algún producto."
+  },
+  "adminCatalog": {
+    "title": "Administración del catálogo",
+    "intro": "Introduce el token de administración (el mismo que ADMIN_API_TOKEN en el servidor). No lo compartas.",
+    "tokenPh": "Token",
+    "connect": "Conectar",
+    "disconnect": "Cerrar sesión",
+    "modeView": "Vista",
+    "modeEdit": "Edición",
+    "download": "Descargar JSON",
+    "save": "Guardar cambios",
+    "saving": "Guardando…",
+    "saveOk": "Catálogo guardado correctamente.",
+    "saveErr": "No se ha podido guardar (revisa el token o el servidor).",
+    "loadError": "No se ha podido cargar el catálogo.",
+    "loading": "Cargando…"
+  },
+  "home": {
+    "title": "Bienvenidos a nuestra casa, bienvenidos a La Saó",
+    "lead": "Bienvenidos a La Saó",
+    "body": "En este sitio encontraréis la información de La Saó Vallès: quiénes somos, qué hacemos, dónde estamos y cómo pedir. Si lo preferís, podéis llamar o escribir en cualquier momento. Gracias por confiar en nosotros.",
+    "heroAlt": "Huerto y producto de proximidad",
+    "ctaOrder": "Cómo realizar un pedido",
+    "ctaLocation": "Punto de venta y horarios",
+    "col1Title": "Producto de confianza",
+    "col1Text": "Cuida la tierra, con producto de calidad y de proximidad.",
+    "col2Title": "Cerca de ti",
+    "col2Text": "Reparto a municipios del Vallès, con atención de pequeña empresa familiar.",
+    "col3Title": "Los mismos valores",
+    "col3Text": "Compromiso con una alimentación sencilla, el trato a las personas y la atención directa al cliente."
+  },
+  "newpage": {
+    "title": "Quiénes somos",
+    "kicker": "CONÓCENOS",
+    "p1": "De la huerta a la mesa",
+    "p2": "Quiénes somos",
+    "p3": "Somos una pequeña empresa familiar: labramos la tierra y queremos llevar a vuestra mesa lo mejor de cada temporada.",
+    "certs": "Formación y certificados",
+    "certsT": "Quien trabajamos en La Saó hemos hecho formación en lo necesario para acompañar con criterio humano y técnico.",
+    "exp": "Experiencia",
+    "expT": "Años de aprendizaje en venta, producción y mimo al detalle en el Vallès.",
+    "q": "Calidad de proximidad",
+    "qT": "Un producto claro, sabroso y cuya procedencia conocemos, para la mesa o la oficina.",
+    "partnersTitle": "Colaboradores",
+    "partnersIntro": "Quien nos acompaña, del campo a la gente.",
+    "partnersImageAlt": "Logotipo o imagen de colaborador"
+  },
+  "galeria": {
+    "title": "Galería",
+    "body": "Una selección de imágenes del producto, el camino de la Saó y el trato. Para vernos, también en el punto de venta y en el mercadillo: consulta la página Punto de venta.",
+    "imageAlt": "Imagen de la galería de La Saó Vallès",
+    "videoHeading": "Vídeo",
+    "videoIntro": "Aquí podéis ver el día a día de La Saó Vallès.",
+    "iframeTitle": "Vídeo de La Saó Vallès en YouTube"
+  },
+  "informacio": {
+    "title": "Haz tu pedido con La Saó",
+    "sub": "Sin mínimo de importe, con el coste de transporte gratuito, según el servicio, como norma. Aquí tienes la información para encargar a La Saó Vallès.",
+    "catalogUpdated": "El catálogo (editable) se mantiene actualizado: baja el listado, elige productos y cantidad; si dudas, pídenos pauta por e-mail o teléfono.",
+    "ordersCtaTitle": "Pedido en línea (nuevo)",
+    "ordersCtaBody": "Ahora podéis rellenar el pedido semanal aquí mismo: el catálogo, cantidades y resumen se envían por correo al titular y recibís una copia.",
+    "ordersCtaButton": "Ir al pedido en línea",
+    "p1": "Rellena el listado, envíalo a lasao.valles@gmail.com y te confirmaremos. Si aún no sabes el día de entrega, te propondremos una franja; entrega a domicilio, según ruta, en jornada tarde, como figura en la tabla de abajo. Así de sencillo.",
+    "p2": "Habitualmente el reparto aproximado es de 19:00 a 22:00 h.",
+    "routesH2": "Rutas de reparto por días",
+    "routesIntro": "Las rutas se organizan por días. Si tu municipio no figura, o tienes otra duda, escríbenos a lasao.valles@gmail.com o al teléfono 625 037 770 (también WhatsApp, según disponibilidad).",
+    "doubt": "Para comentar cualquier cuestión, usad los mismos datos de la sección de contacto.",
+    "pay": "Los primeros pedidos se liquidan en efectivo o TPV. Después, podrás abonar transferencia, en un plazo de hasta 48 h tras la entrega. Cuenta para abonos: ES67 0081 0525 0700 0103 3812. Cualquier producto puede faltar de un día a otro; en ese caso te avisaremos. Gracias por vuestro entendimiento.",
+    "delivery": [
+      {
+        "day": "Martes",
+        "sections": [
+          { "lines": ["Sant Cugat del Vallès"] },
+          {
+            "label": "Bcn",
+            "lines": [
+              "Poblenou", "Clot", "Sagrada Família", "Poble Sec", "Sants", "Gràcia", "Les Corts", "Sarrià"
+            ]
+          }
+        ]
+      },
+      {
+        "day": "Miércoles",
+        "sections": [
+          { "lines": ["Sant Cugat del Vallès", "Martorelles", "Sant Fost de Campsentelles", "Montmeló", "Montornès del Vallès"] },
+          {
+            "label": "Bcn",
+            "lines": [
+              "Clot", "Sant Andreu / la Sagrera", "Nou Barris", "Horta", "Virrei Amat"
+            ]
+          }
+        ]
+      },
+      {
+        "day": "Jueves",
+        "sections": [
+          {
+            "lines": [
+              "Badalona",
+              "Mollet del Vallès",
+              "Parets del Vallès",
+              "Lliçà de Vall / Munt",
+              "Rubí",
+              "Sabadell",
+              "Sant Quirze del Vallès",
+              "Cerdanyola",
+              "Cardedeu",
+              "Llinars del Vallès",
+              "la Roca del Vallès",
+              "Santa Agnès de Malanyanes",
+              "Granollers"
+            ]
+          },
+          {
+            "label": "Bcn",
+            "lines": ["Horta-Guinardó", "Montbau", "Vall d’Hebron"]
+          }
+        ]
+      }
+    ]
+  },
+  "puntVenda": {
+    "title": "Punto de venta",
+    "cistellesH2": "Cestas",
+    "cistellesText": "Muy pronto, aquí toda la información de productos. Mientras, podéis comandar por e-mail, teléfono o en las paradas de mercadillo, según Cómo pedir.",
+    "mercatsH2": "Los mercadillos",
+    "mercatsText": "Podéis adquirir nuestro producto en el puesto de mercadillo: sábado en Santa Eulàlia de Ronçana y domingo en Moià.",
+    "onSomH2": "Cómo llegar",
+    "body": "El mostrador fijo y la atención presencial: confirma horario por teléfono. Más abajo, un atajo a mapa para aproximarte a la comarca del Vallès.",
+    "mapCta": "Abrir mapa (búsqueda: La Saó Vallès, fruta, Vallès)",
+    "mapUrl": "https://www.google.com/maps/search/La+Sa%C3%B3+Vall%C3%A8s+fruita/"
+  },
+  "contacte": {
+    "title": "Contacto",
+    "intro": "Podéis escribirnos o llamarnos. Procuramos responder con brevedad; fuera de horario, en la siguiente jornada.",
+    "phoneLabel": "Teléfono / WhatsApp",
+    "emailLabel": "Correo"
+  },
+  "aviso": {
+    "title": "Aviso legal",
+    "p1": "En cumplimiento de la norma, este aviso deberá completar el titular con CIF, domicilio, datos y correos legales; conviene revisarlo con asesoría antes de publicar la versión definitiva.",
+    "p2": "Derechos de propiedad, limitación de responsabilidad, condiciones de uso, protección de datos y, si aplica, cookies, deben redactarse bajo criterio jurídico, en sintonía con la política de privacidad."
+  },
+  "servei": {
+    "title": "Servicio a empresas",
+    "aboutWhoTitle": "Quiénes somos",
+    "aboutWhoText": "Somos una pequeña empresa familiar que trabajamos la tierra y hacemos de agricultores como siempre se ha hecho.",
+    "workTitle": "Nuestro trabajo",
+    "workText": "En La Saó creemos en una agricultura respetuosa con el ecosistema, en el aprovechamiento de los recursos naturales para la fertilidad del suelo y en el uso de las nuevas tecnologías aplicadas a la agricultura, con el fin de reducir el impacto ambiental. Así obtenemos un producto de calidad que se comercializa de forma local y de proximidad.",
+    "offerTitle": "Qué ofrecemos",
+    "offerP1": "Desde La Saó os ofrecemos el servicio, en el lugar de trabajo, de productos por encargo individual, que podréis recoger al finalizar vuestra jornada laboral.",
+    "offerInfoLink": "Aquí tenéis toda la información",
+    "offerP2": "También ponemos a vuestra disposición y a la de vuestros trabajadores un servicio de vida saludable en el que ofrecemos fruta y productos variados, para que puedan consumirlos durante todo el día.",
+    "offerPricingIntro": "Para este servicio, la tarifa de precios es la siguiente:",
+    "offerBasket1": "Cesta de fruta básica: 15 € / semanales",
+    "offerBasket2": "Cesta de fruta básica+: 20 € / semanales.",
+    "offerClosing": "Para cualquier duda, contactadnos en nuestro correo o en el teléfono de la página de contacto.",
+    "mailCta": "Escribir a lasao.valles@gmail.com",
+    "statsAria": "Indicadores del servicio a empresas",
+    "statClients": "Clientes",
+    "statClientsValue": "800",
+    "statLocations": "Ubicaciones",
+    "statLocationsValue": "15",
+    "statStaff": "Personal",
+    "statStaffValue": "10",
+    "statYears": "Años",
+    "statYearsValue": "13",
+    "pillarCertsTitle": "Certificados",
+    "pillarCertsText": "Las personas que trabajamos en La Saó estamos formadas en distintos niveles de estudio, en los ámbitos necesarios para transmitir la mayor confianza.",
+    "pillarExpTitle": "Equipo con experiencia",
+    "pillarExpText": "La Saó lleva una experiencia de aproximadamente 7 años, tanto en venta como en producción.",
+    "pillarQualityTitle": "Calidad garantizada",
+    "pillarQualityText": "En La Saó podéis encontrar un producto distinto, de calidad y de proximidad.",
+    "collabHeading": "Colaboramos con:",
+    "footerNote": "Para presupuestos, volúmenes o condiciones especiales, contactadnos: nos adaptamos al calendario de vuestro equipo."
+  },
+  "notFound": {
+    "title": "No hemos hallado la página",
+    "back": "Volver a inicio"
+  },
+  "footer": {
+    "copyright": "Copyright © Todos los derechos reservados. La Saó Vallès",
+    "callUs": "Llamar: 625 037 770",
+    "orders": "Cómo pedir e información",
+    "versionLine": "Versión {{version}}",
+    "developedBy": "Develop by Luipy",
+    "disclaimer": "El sitio describe contacto: los pedidos se aceptan por e-mail, teléfono o, si aplica, en el punto de venta, según se indique en las páginas de este sitio web."
+  }
+}

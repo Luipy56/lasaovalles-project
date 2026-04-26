@@ -1,0 +1,62 @@
+@use './tokens' as t;
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: t.$font-content;
+  color: t.$color-text;
+  line-height: 1.55;
+  font-size: 1rem;
+  @media (min-width: t.$bp-md) {
+    font-size: 1.05rem;
+  }
+}
+
+h1,
+h2,
+h3,
+.page-title {
+  font-family: t.$font-content;
+  line-height: 1.22;
+  font-weight: 700;
+  color: t.$color-primary;
+  margin: 0 0 t.$space-3;
+}
+
+h1,
+.page-title {
+  font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.4rem);
+}
+
+h2 {
+  font-size: clamp(1.25rem, 1.05rem + 0.9vw, 1.75rem);
+  margin-top: t.$space-5;
+}
+
+h3 {
+  font-size: 1.15rem;
+  color: t.$color-primary-light;
+  font-weight: 700;
+}
+
+p {
+  margin: 0 0 t.$space-3;
+}
+
+.prose {
+  max-width: t.$max-reading;
+  margin-inline: auto;
+  text-wrap: pretty;
+  color: t.$color-text-muted;
+  & a {
+    color: t.$color-primary;
+    text-underline-offset: 2px;
+  }
+}
+
+.font-sans {
+  font-family: t.$font-sans;
+}

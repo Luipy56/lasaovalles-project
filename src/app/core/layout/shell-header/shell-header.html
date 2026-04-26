@@ -1,0 +1,73 @@
+<header class="site-header" [class.site-header--open]="mobileOpen()">
+  <div class="site-header__bar">
+    <a routerLink="/" class="site-header__brand" (click)="closeNav()">
+      <img
+        class="site-header__logo"
+        src="/images/logo-header-white.png"
+        width="180"
+        height="48"
+        alt="La Saó Vallès"
+      />
+    </a>
+
+    <div
+      class="site-header__nav-block"
+      [class.is-open]="mobileOpen()"
+      (keydown.escape)="closeNav()"
+    >
+      <div class="site-header__scrim" (click)="closeNav()" role="presentation"></div>
+      <nav id="main-nav" class="site-nav" aria-label="Main">
+        <div class="site-nav__drawer-head">
+          <span class="site-nav__drawer-title">{{ 'nav.drawerTitle' | transloco }}</span>
+          <button
+            type="button"
+            class="site-nav__close"
+            (click)="closeNav()"
+            [attr.aria-label]="'a11y.closeMenu' | transloco"
+          >
+            <svg class="site-nav__close-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                d="M6 6l12 12M18 6L6 18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <ul class="site-nav__list">
+          @for (item of nav; track item.path) {
+            <li>
+              <a
+                [routerLink]="item.path"
+                routerLinkActive="is-active"
+                [routerLinkActiveOptions]="item.path === '/' ? { exact: true } : { exact: false }"
+                (click)="closeNav()"
+              >
+                {{ item.labelKey | transloco }}
+              </a>
+            </li>
+          }
+        </ul>
+      </nav>
+    </div>
+
+    <div class="site-header__end">
+      <div class="lang-switch" role="group" [attr.aria-label]="'header.lang' | transloco">
+        <button type="button" [class.is-active]="isActive('ca')" (click)="setLang('ca')">CA</button>
+        <button type="button" [class.is-active]="isActive('es')" (click)="setLang('es')">ES</button>
+      </div>
+      <button
+        type="button"
+        class="site-header__hamburger"
+        [attr.aria-expanded]="mobileOpen()"
+        aria-controls="main-nav"
+        (click)="toggleNav()"
+      >
+        <span class="visually-hidden">{{ 'a11y.menu' | transloco }}</span>
+        <span class="hamburger" [class.open]="mobileOpen()" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,255 @@
+{
+  "a11y": {
+    "menu": "Obrir menú de navegació",
+    "close": "Tancar",
+    "closeMenu": "Tancar el menú"
+  },
+  "header": { "lang": "Selecció d'idioma" },
+  "nav": {
+    "inici": "Inici",
+    "quiSom": "Qui som",
+    "galeria": "Galeria",
+    "informacio": "Fes la teva comanda",
+    "puntVenda": "Punt de venda",
+    "contacte": "Contacte",
+    "avisLegal": "Avís legal",
+    "serveiEmpreses": "Servei a empreses",
+    "drawerTitle": "Menú",
+    "ordersOnline": "Comanda en línia"
+  },
+  "meta": {
+    "home": {
+      "title": "Inici | La Saó Vallès",
+      "description": "Benvinguts a La Saó Vallès, fruita i verdura de qualitat al Vallès, de l’hort a la taula."
+    },
+    "newpage": {
+      "title": "Qui som | La Saó Vallès",
+      "description": "Conèix La Saó Vallès, treball de proximitat i un equip amb experiència al Vallès."
+    },
+    "galeria": { "title": "Galeria | La Saó Vallès", "description": "Imatges, el dia a dia en vídeo i el treball a La Saó Vallès." },
+    "informacio": { "title": "Fes la teva comanda | La Saó Vallès", "description": "Com passar comanda, horari de repartiment i dades bancàries per transferències." },
+    "puntVenda": { "title": "Punt de venda | La Saó Vallès", "description": "On som, horaris, mercat setmanal i cistella." },
+    "contacto": { "title": "Contacte | La Saó Vallès", "description": "Telèfon, correu i xarxes de La Saó Vallès." },
+    "aviso": { "title": "Avís legal | La Saó Vallès", "description": "Avís legal i condicions d’ús d’aquest lloc web." },
+    "servei": { "title": "Servei a empreses | La Saó Vallès", "description": "Cistelles per a empreses, fruita al lloc de treball, tarifes i col·laboradors. La Saó Vallès." },
+    "notFound": { "title": "Pàgina no trobada | La Saó Vallès", "description": "La pàgina sol·licitada no existeix." },
+    "orders": {
+      "title": "Comanda en línia | La Saó Vallès",
+      "description": "Omple la comanda setmanal amb el catàleg actual: quantitats, resum i enviament per correu al titular i còpia per a tu."
+    }
+  },
+  "orders": {
+    "intro": "Seleccioneu les quantitats al final de cada fila. El total es calcula automàticament. Quan acabeu, empleneu les dades de contacte i envieu la comanda.",
+    "loading": "Carregant catàleg…",
+    "loadError": "No s’ha pogut carregar el catàleg. Torneu a intentar-ho més tard o contacteu amb el titular.",
+    "tableProduct": "Producte",
+    "tableOrigin": "Procedència",
+    "tableUnit": "Unitat",
+    "tablePrice": "Preu",
+    "tableQty": "Quantitat",
+    "tableSubtotal": "Subtotal",
+    "total": "Total",
+    "scrollPrev": "Pujar categoria",
+    "scrollNext": "Baixar categoria",
+    "customerH": "Dades de contacte i lliurament",
+    "name": "Nom i cognoms",
+    "email": "Correu electrònic",
+    "phone": "Telèfon (opcional)",
+    "address": "Adreça completa d’enviament",
+    "accept": "He llegit la informació de la pàgina «Fes la teva comanda» i accepto que em contactin per correu en relació amb aquesta comanda.",
+    "submit": "Enviar comanda",
+    "submitting": "Enviant…",
+    "success": "Comanda enviada. Revisa el correu: rebràs una còpia i el titular rebrà el detall complet.",
+    "errorGeneric": "No s’ha pogut enviar. Torneu a intentar-ho o truqueu al titular.",
+    "errorMail": "El servei de correu encara no està configurat al servidor. Contacteu amb el titular per telèfon o correu.",
+    "errorAccept": "Cal marcar l’acceptació per continuar.",
+    "errorLines": "Afegiu almenys una quantitat superior a 0 en algun producte."
+  },
+  "adminCatalog": {
+    "title": "Administració del catàleg",
+    "intro": "Introdueix el token d’administració (el mateix que ADMIN_API_TOKEN al servidor). No el comparteixis.",
+    "tokenPh": "Token",
+    "connect": "Connectar",
+    "disconnect": "Tancar sessió",
+    "modeView": "Vista",
+    "modeEdit": "Edició",
+    "download": "Descarregar JSON",
+    "save": "Desar canvis",
+    "saving": "Desant…",
+    "saveOk": "Catàleg desat correctament.",
+    "saveErr": "No s’ha pogut desar (revisa el token o el servidor).",
+    "loadError": "No s’ha pogut carregar el catàleg.",
+    "loading": "Carregant…"
+  },
+  "home": {
+    "title": "Benvinguts a casa nostra, benvinguts a La Saó",
+    "lead": "Benvinguts a La Saó",
+    "body": "En aquest lloc web hi trobareu la informació sobre La Saó Vallès: qui som, què fem, on som i com passar comanda. Si voleu, podeu trucar o escriure en qualsevol moment. Gràcies per ser-hi.",
+    "heroAlt": "Horta i producte de proximitat",
+    "ctaOrder": "Com fer la comanda",
+    "ctaLocation": "Punt de venda i horaris",
+    "col1Title": "Producte de confiança",
+    "col1Text": "Treballa la terra amb cura, amb producte de qualitat i de proximitat.",
+    "col2Title": "A prop teu",
+    "col2Text": "Repartiment a municipis del Vallès, amb l’atenció d’una empresa familiar petita.",
+    "col3Title": "Els mateixos valors",
+    "col3Text": "Compromís amb l’alimentació sana, el bon tracte i l’atenció personal al client."
+  },
+  "newpage": {
+    "title": "Qui som",
+    "kicker": "CONEIX-NOS",
+    "p1": "De l’hort a la taula",
+    "p2": "Qui som",
+    "p3": "Som una petita empresa familiar: treballem la terra i volem portar a casa el millor de cada temporada, com sempre.",
+    "certs": "Formació i certificats",
+    "certsT": "L’equip s’ha format en els àmbits necessaris per acompanyar el client amb criteri tècnic i humà.",
+    "exp": "Experiència",
+    "expT": "Més d’uns anys d’aprenentatge en venda, producció i atenció al detall al Vallès.",
+    "q": "Qualitat de proximitat",
+    "qT": "Un producte sòlid, saborós i d’on el coneixem, per a la taula o l’oficina.",
+    "partnersTitle": "Col·laboradors",
+    "partnersIntro": "Amb qui treballem, del camp al client:",
+    "partnersImageAlt": "Logotip o imatge de col·laborador"
+  },
+  "galeria": {
+    "title": "Galeria",
+    "body": "Una tria d’imatges del producte, el recorregut de la Saó i l’atenció a les persones. Per veure’ns, també al punt de venda i als mercats (consulteu la pàgina Punt de venda).",
+    "imageAlt": "Imatge de la galeria La Saó Vallès",
+    "videoHeading": "Vídeo",
+    "videoIntro": "Aquí podreu veure el dia a dia de La Saó Vallès.",
+    "iframeTitle": "Vídeo de La Saó Vallès allotjat a YouTube"
+  },
+  "informacio": {
+    "title": "Fes la teva comanda amb La Saó",
+    "sub": "Sense import mínim i amb cost de transport gratuït, segons el servei. Aquí teniu la informació per a fer comanda a La Saó Vallès.",
+    "catalogUpdated": "Catàleg actualitzat: consulteu l’arxiu de productes (editables) rebut per correu o acompanyant la darrera comanda, i ompliu els productes que voleu.",
+    "ordersCtaTitle": "Comanda en línia (nou)",
+    "ordersCtaBody": "Ara podeu omplir la comanda setmanal aquí mateix: el catàleg, quantitats i resum s’envien per correu al titular i en rebeu una còpia.",
+    "ordersCtaButton": "Anar a la comanda en línia",
+    "p1": "Un cop l’hagueu emplenat, envieu el full a lasao.valles@gmail.com. Nosaltres us confirmem la comanda; si no en teniu, us direm el dia aproximat de lliurament a domicili, en la jornada disponible. Així de senzill.",
+    "p2": "Us informem que l’horari aproximat del repartiment és de 19:00 a 22:00.",
+    "routesH2": "Rutes de repartiment per dies",
+    "routesIntro": "Les rutes estan organitzades per dies i setmanes. A continuació, municipis o zones; si el vostre poble no hi és o teniu un dubte, truqueu o escriviu a lasao.valles@gmail.com. Telèfon: 625 037 770 (també WhatsApp, segons disponibilitat).",
+    "doubt": "Per a qualsevol comentari, seguim en contacte: mateixes dades a contacte.",
+    "pay": "Les primeres comandes s’en cobraran en efectiu o TPV. A partir d’ahí es podrà pagar per transferència, amb un màxim de 48 hores després de l’entrega. El número de compte per a transferències és: ES67 0081 0525 0700 0103 3812. Alguns productes poden no estar disponibles un dia; en aquest cas, us n’assabentarem. Gràcies per la vostra comprensió.",
+    "delivery": [
+      {
+        "day": "Dimarts",
+        "sections": [
+          { "lines": ["Sant Cugat del Vallès"] },
+          {
+            "label": "Bcn",
+            "lines": [
+              "Poblenou", "Clot", "Sagrada Família", "Poble Sec", "Sants", "Gràcia", "Les Corts", "Sarrià"
+            ]
+          }
+        ]
+      },
+      {
+        "day": "Dimecres",
+        "sections": [
+          { "lines": ["Sant Cugat del Vallès", "Martorelles", "Sant Fost de Campsentelles", "Montmeló", "Montornès del Vallès"] },
+          {
+            "label": "Bcn",
+            "lines": [
+              "Clot", "Sant Andreu / la Sagrera", "Nou Barris", "Horta", "Virrei Amat"
+            ]
+          }
+        ]
+      },
+      {
+        "day": "Dijous",
+        "sections": [
+          {
+            "lines": [
+              "Badalona",
+              "Mollet del Vallès",
+              "Parets del Vallès",
+              "Lliçà de Vall / Munt",
+              "Rubí",
+              "Sabadell",
+              "Sant Quirze del Vallès",
+              "Cerdanyola",
+              "Cardedeu",
+              "Llinars del Vallès",
+              "la Roca del Vallès",
+              "Santa Agnès de Malanyanes",
+              "Granollers"
+            ]
+          },
+          {
+            "label": "Bcn",
+            "lines": ["Horta-Guinardó", "Montbau", "Vall d’Hebron"]
+          }
+        ]
+      }
+    ]
+  },
+  "puntVenda": {
+    "title": "Punt de venda",
+    "cistellesH2": "Cistelles",
+    "cistellesText": "A la secció de cistella trobareu, aviat, tota la informació dels productes. Mentre us podem atendre a través del correu, el telèfon o a les parades del mercat. Per comandes, vegeu Fes la teva comanda.",
+    "mercatsH2": "Els mercats",
+    "mercatsText": "Podeu adquirir el nostre producte a la parada del mercat setmanal de la Saó: dissabte a Santa Eulàlia de Ronçana i diumenge a Moià.",
+    "onSomH2": "Com arribar-hi",
+    "body": "El punt de venda habitual i l’atenció presencial: consulteu horaris actuals per telèfon. Us deixem un enllaç a mapa per aproximar-vos a la zona del Vallès.",
+    "mapCta": "Obrir mapa (cerca: La Saó Vallès, fruita, Vallès)",
+    "mapUrl": "https://www.google.com/maps/search/La+Sa%C3%B3+Vall%C3%A8s+fruita/"
+  },
+  "contacte": {
+    "title": "Contacte",
+    "intro": "Podeu escriure’ns o trucar-nos. Tractarem el vostre missatge amb criteri, sense compromís, per respondre al més aviat possible (excepte fora d’horari, que ho farem a la jornada següent).",
+    "phoneLabel": "Telèfon / WhatsApp",
+    "emailLabel": "Correu electrònic"
+  },
+  "aviso": {
+    "title": "Avís legal",
+    "p1": "En compliment de la normativa vigent, en aquesta pàgina s’inclouen les dades identificatives del titular del lloc, domicili i dades de contacte. Cal substituir o validar aquests valors per consell de la persona o entitat asssessora, si aplica, abans d’enfortir el text en versió pública sota responsabilitat del titular.",
+    "p2": "Drets de propietat intel·lectual, limitació de responsabilitat, ús d’aquesta web, protecció de dades, cookies: han de rebre redacció legal definitiva segons criteri de l’assessorament corresponent, en línia amb la política de privacitat i, si aplica, la política de cookies."
+  },
+  "servei": {
+    "title": "Servei a empreses",
+    "aboutWhoTitle": "Qui som",
+    "aboutWhoText": "Som una petita empresa familiar que treballem la terra i fem de pagès com sempre s’ha fet.",
+    "workTitle": "El nostre treball",
+    "workText": "En la Saó creiem en una agricultura respectuosa amb l’ecosistema, en l’aprofitament dels recursos naturals per a la fertilitat del sòl i la utilització de les noves tecnologies aplicades a l’agricultura, amb la finalitat de reduir l’impacte ambiental. D’aquesta manera obtenim un producte de qualitat que es comercialitza de manera local i de proximitat.",
+    "offerTitle": "Què oferim",
+    "offerP1": "Des de La Saó us oferim el servei, al lloc de treball, de productes per encàrrec individual, que podreu recollir en finalitzar la vostra jornada laboral.",
+    "offerInfoLink": "Podreu trobar tota la info aquí",
+    "offerP2": "També posem a la vostra disposició i a la dels vostres treballadors un servei de vida saludable en què oferim fruita i productes variats, perquè els treballadors puguin consumir durant tot el dia.",
+    "offerPricingIntro": "Per a aquest servei, la tarifa de preus és la següent:",
+    "offerBasket1": "Cistella de fruita bàsica: 15 € / setmanals",
+    "offerBasket2": "Cistella de fruita bàsica+: 20 € / setmanals.",
+    "offerClosing": "Per a qualsevol pregunta, no dubteu a contactar-nos al nostre correu o al telèfon de la pàgina de contacte.",
+    "mailCta": "Escriure a lasao.valles@gmail.com",
+    "statsAria": "Indicadors del servei a empreses",
+    "statClients": "Clients",
+    "statClientsValue": "800",
+    "statLocations": "Ubicacions",
+    "statLocationsValue": "15",
+    "statStaff": "Personal",
+    "statStaffValue": "10",
+    "statYears": "Anys",
+    "statYearsValue": "13",
+    "pillarCertsTitle": "Certificats",
+    "pillarCertsText": "Les persones que treballem a la Saó estem formades en diferents graus d’estudi, en els camps requerits per transmetre la millor confiança.",
+    "pillarExpTitle": "Equip amb experiència",
+    "pillarExpText": "La Saó porta una motxilla d’experiència d’aproximadament 7 anys, tant en venda com en producció.",
+    "pillarQualityTitle": "Qualitat garantida",
+    "pillarQualityText": "A la Saó podreu trobar un producte diferent, de qualitat i de proximitat.",
+    "collabHeading": "Col·laborem amb:",
+    "footerNote": "Per pressupostos, volums o condicions especials, contacteu-nos: ens adaptem al calendari del vostre equip."
+  },
+  "notFound": {
+    "title": "No hem trobat aquesta pàgina",
+    "back": "Tornar a l’inici"
+  },
+  "footer": {
+    "copyright": "Copyright © Tots els drets reservats. La Saó Vallès",
+    "callUs": "Truqueu: 625 037 770",
+    "orders": "Fer la comanda i informació",
+    "versionLine": "Versió {{version}}",
+    "developedBy": "Develop by Luipy",
+    "disclaimer": "Aquest lloc ofereix contacte; les comandes es reben per e-mail, telèfon o, si aplica, al punt de venda, segons el que s’hagi informat a cada pàgina d’aquest web."
+  }
+}

@@ -1,0 +1,27 @@
+<article class="page page--puntvenda">
+  <h1 class="page-title">{{ 'puntVenda.title' | transloco }}</h1>
+
+  <section class="puntvenda-block" aria-labelledby="cistelles-h">
+    <h2 class="puntvenda-block__h" id="cistelles-h">{{ 'puntVenda.cistellesH2' | transloco }}</h2>
+    <p class="prose">{{ 'puntVenda.cistellesText' | transloco }}</p>
+  </section>
+
+  <section class="puntvenda-block" aria-labelledby="mercats-h">
+    <h2 class="puntvenda-block__h" id="mercats-h">{{ 'puntVenda.mercatsH2' | transloco }}</h2>
+    <p class="prose">{{ 'puntVenda.mercatsText' | transloco }}</p>
+  </section>
+
+  <section class="puntvenda-block" aria-labelledby="onsom-h">
+    <h2 class="puntvenda-block__h" id="onsom-h">{{ 'puntVenda.onSomH2' | transloco }}</h2>
+    <p class="prose">{{ 'puntVenda.body' | transloco }}</p>
+    <p>
+      <a
+        class="puntvenda-cta"
+        [href]="'puntVenda.mapUrl' | transloco"
+        rel="noopener noreferrer"
+        target="_blank"
+        >{{ 'puntVenda.mapCta' | transloco }}</a
+      >
+    </p>
+  </section>
+</article>

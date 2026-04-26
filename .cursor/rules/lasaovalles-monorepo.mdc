@@ -1,0 +1,28 @@
+---
+description: Project layout — Angular + api inside saovalles, dev proxy, no secrets in browser
+alwaysApply: true
+---
+
+# La Saó Vallès — project layout (Git root = `saovalles/`)
+
+## Layout
+
+- **Git / development root:** this **`saovalles/`** folder (Angular app + `api/` subfolder).
+- **`api/`** — Express: catalog JSON on disk, `POST /api/orders` (Nodemailer), admin `Bearer` for catalog CRUD. **All SMTP credentials and `ADMIN_API_TOKEN` live only in `api/.env`**, never in Angular.
+- **Optional material outside this tree** (e.g. `../phase-zero/` next to the clone): reference only; the Excel import script looks there by default.
+
+## HTTP contract
+
+- Browser calls **`/api/...`** (`src/environments/environment*.ts`, `apiBasePath: '/api'`).
+- Local dev: from **`saovalles/`**, **`npm run dev`** runs **API (3000) + `ng serve` (4200)**; **`proxy.conf.json`** forwards `/api` → `http://127.0.0.1:3000`. Without the API, `/orders` shows a catalog load error.
+- Production: Nginx (or similar) serves the Angular build and proxies **`/api/`** to Node (see **`api/README.md`**).
+
+## Phase 2 routes (Angular)
+
+- **`/orders`**, **`/admin/catalogo`** (admin token in `sessionStorage` = server `ADMIN_API_TOKEN`).
+- Catalog JSON shape: **`api/data/order-catalog.json`** ↔ **`src/app/core/models/order-catalog.model.ts`** — keep aligned with **`api/src/catalogSchema.js`** when changing schema.
+
+## Do not
+
+- Send mail or store API keys in the Angular bundle.
+- Commit **`api/.env`** (listed in **`.gitignore`**).

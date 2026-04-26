@@ -1,0 +1,38 @@
+<article class="page page--informacio">
+  <h1 class="page-title">{{ 'informacio.title' | transloco }}</h1>
+  <p class="page__sub">{{ 'informacio.sub' | transloco }}</p>
+  <p class="prose">{{ 'informacio.catalogUpdated' | transloco }}</p>
+
+  <section class="informacio-cta" aria-labelledby="orders-cta-h">
+    <h2 id="orders-cta-h" class="informacio-cta__h">{{ 'informacio.ordersCtaTitle' | transloco }}</h2>
+    <p class="prose informacio-cta__p">{{ 'informacio.ordersCtaBody' | transloco }}</p>
+    <a routerLink="/orders" class="informacio-cta__btn">{{ 'informacio.ordersCtaButton' | transloco }}</a>
+  </section>
+
+  <p class="prose">{{ 'informacio.p1' | transloco }}</p>
+  <p class="prose"><strong>{{ 'informacio.p2' | transloco }}</strong></p>
+
+  <h2 class="informacio-routes__h2">{{ 'informacio.routesH2' | transloco }}</h2>
+  <p class="prose informacio-routes__intro">{{ 'informacio.routesIntro' | transloco }}</p>
+
+  @for (d of delivery(); track d.day) {
+    <section class="delivery-day" [attr.aria-labelledby]="'dayhead-' + $index">
+      <h3 class="delivery-day__title" [id]="'dayhead-' + $index">{{ d.day }}</h3>
+      @for (sec of d.sections; track $index) {
+        <div class="delivery-day__block">
+          @if (sec.label) {
+            <p class="delivery-day__label">{{ sec.label }}</p>
+          }
+          <ul class="delivery-day__list">
+            @for (z of sec.lines; track z) {
+              <li>{{ z }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </section>
+  }
+
+  <p class="prose">{{ 'informacio.doubt' | transloco }}</p>
+  <p class="prose">{{ 'informacio.pay' | transloco }}</p>
+</article>

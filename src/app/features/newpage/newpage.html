@@ -1,0 +1,39 @@
+<article class="page">
+  <p class="page__kicker">{{ 'newpage.kicker' | transloco }}</p>
+  <h1 class="page-title">{{ 'newpage.title' | transloco }}</h1>
+  <p class="page__lead">{{ 'newpage.p1' | transloco }}</p>
+  <h2>{{ 'newpage.p2' | transloco }}</h2>
+  <p class="prose">{{ 'newpage.p3' | transloco }}</p>
+  <div class="grid-3">
+    <section>
+      <h3>{{ 'newpage.certs' | transloco }}</h3>
+      <p class="prose">{{ 'newpage.certsT' | transloco }}</p>
+    </section>
+    <section>
+      <h3>{{ 'newpage.exp' | transloco }}</h3>
+      <p class="prose">{{ 'newpage.expT' | transloco }}</p>
+    </section>
+    <section>
+      <h3>{{ 'newpage.q' | transloco }}</h3>
+      <p class="prose">{{ 'newpage.qT' | transloco }}</p>
+    </section>
+  </div>
+
+  <section class="partners" aria-labelledby="partners-title">
+    <h2 class="page-title" id="partners-title">{{ 'newpage.partnersTitle' | transloco }}</h2>
+    <p class="prose partners__intro">{{ 'newpage.partnersIntro' | transloco }}</p>
+    <ul class="partners__grid">
+      @for (p of partners; track p.src) {
+        <li class="partners__item">
+          <img
+            [ngSrc]="p.src"
+            [width]="p.w"
+            [height]="p.h"
+            class="partners__img"
+            [alt]="'newpage.partnersImageAlt' | transloco"
+          />
+        </li>
+      }
+    </ul>
+  </section>
+</article>
