@@ -15,12 +15,23 @@ function getTransport() {
   });
 }
 
+/** @returns {string[]} Env var names that are missing or blank (for diagnostics). */
+export function getMailConfigGaps() {
+  const gaps = [];
+  if (!process.env.SMTP_HOST?.trim()) gaps.push('SMTP_HOST');
+  if (!process.env.SMTP_USER?.trim()) gaps.push('SMTP_USER');
+  if (!process.env.SMTP_PASS?.trim()) gaps.push('SMTP_PASS');
+  if (!process.env.MAIL_FROM?.trim()) gaps.push('MAIL_FROM');
+  if (!process.env.OWNER_EMAIL?.trim()) gaps.push('OWNER_EMAIL');
+  return gaps;
+}
+
 export function isMailConfigured() {
-  return Boolean(getTransport() && process.env.MAIL_FROM && process.env.OWNER_EMAIL);
+  return getMailConfigGaps().length === 0;
 }
 
 /**
- * @param {{ to: string; subject: string; text: string; html: string; replyTo?: string }} opts
+ * @param {{ to: string; subject: string; text: string; html: string; replyTo?: string; attachments?: import('nodemailer').SendMailOptions['attachments'] }} opts
  */
 export async function sendMail(opts) {
   const transport = getTransport();
@@ -29,12 +40,16 @@ export async function sendMail(opts) {
   if (!transport || !from || !owner) {
     throw new Error('Mail is not configured');
   }
-  await transport.sendMail({
+  const payload = {
     from,
     to: opts.to,
     subject: opts.subject,
     text: opts.text,
     html: opts.html,
     replyTo: opts.replyTo
-  });
+  };
+  if (opts.attachments?.length) {
+    payload.attachments = opts.attachments;
+  }
+  await transport.sendMail(payload);
 }

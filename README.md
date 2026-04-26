@@ -28,12 +28,12 @@ Repository code, comments, and this README’s **developer** sections are in **E
 
 ```bash
 npm install
-npm run dev
+npm start
 ```
 
-- `postinstall` runs `**npm install` inside `api/**` so the API has its own dependencies.
-- `**npm run dev**` starts **API (port 3000) + `ng serve` (port 4200)** together via `concurrently`.
-- Or: `npm run dev:api` / `npm run dev:web` separately; or only `npx ng serve` if you do not need the catalog API.
+- `postinstall` runs `npm install` inside `api/` so the API has its own dependencies.
+- **`npm start`** (alias: `npm run dev`) runs the **API** on port **3000** (`node --watch` for API hot-reload) and **Angular** on **4200**; `proxy.conf.json` forwards `/api/*` to the API. `concurrently` uses **`-k`** so when one process exits, the other is stopped.
+- **Frontend only:** `npm run start:web` or `npm run dev:web`. **API only:** `npm run dev:api` (watch) or `npm run start:api` (no watch).
 
 Open `http://localhost:4200/`. Default language is **Catalan**; preference is stored in `localStorage` (`saovalles.lang`).
 

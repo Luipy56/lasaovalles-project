@@ -2,19 +2,27 @@ import { randomUUID } from 'node:crypto';
 import { ZodError } from 'zod';
 
 import { catalogItemIndex, readCatalog } from './catalogStore.js';
+import { getOrderEmailLogoAttachment } from './emailAssets.js';
 import { buildCustomerMail, buildOwnerMail } from './orderEmails.js';
-import { isMailConfigured, sendMail } from './mailSend.js';
+import { getMailConfigGaps, isMailConfigured, sendMail } from './mailSend.js';
 import { submitOrderBodySchema } from './ordersSchema.js';
 
 function roundMoney(n) {
   return Math.round(n * 100) / 100;
 }
 
+const isProd = String(process.env.NODE_ENV || '').toLowerCase() === 'production';
+
 export async function handlePostOrder(req, res) {
   if (!isMailConfigured()) {
-    res.status(503).json({
-      error: 'Order email is not configured. Set SMTP_HOST, SMTP_USER, SMTP_PASS, MAIL_FROM, OWNER_EMAIL.'
-    });
+    const body = {
+      error:
+        'Order email is not configured. Set SMTP_HOST, SMTP_USER, SMTP_PASS, MAIL_FROM, OWNER_EMAIL in api/.env (see api/.env.example).'
+    };
+    if (!isProd) {
+      body.missingEnv = getMailConfigGaps();
+    }
+    res.status(503).json(body);
     return;
   }
 
@@ -75,9 +83,13 @@ export async function handlePostOrder(req, res) {
   const orderId = randomUUID().slice(0, 8);
   const ownerContact = process.env.OWNER_EMAIL;
 
+  const logoAtt = getOrderEmailLogoAttachment();
+  const hasLogo = Boolean(logoAtt);
+
   const ownerPayload = buildOwnerMail({
     orderId,
     lang,
+    hasLogo,
     customer: {
       customerName: body.customerName,
       customerEmail: body.customerEmail,
@@ -91,6 +103,7 @@ export async function handlePostOrder(req, res) {
   const customerPayload = buildCustomerMail({
     orderId,
     lang,
+    hasLogo,
     ownerContactEmail: ownerContact,
     customer: {
       customerName: body.customerName,
@@ -103,19 +116,22 @@ export async function handlePostOrder(req, res) {
   });
 
   try {
+    const mailAttachments = logoAtt ? [logoAtt] : undefined;
     await sendMail({
       to: ownerContact,
       subject: ownerPayload.subject,
       text: ownerPayload.text,
       html: ownerPayload.html,
-      replyTo: body.customerEmail
+      replyTo: body.customerEmail,
+      attachments: mailAttachments
     });
     await sendMail({
       to: body.customerEmail,
       subject: customerPayload.subject,
       text: customerPayload.text,
       html: customerPayload.html,
-      replyTo: ownerContact
+      replyTo: ownerContact,
+      attachments: mailAttachments
     });
   } catch (e) {
     console.error('sendMail failed', e);

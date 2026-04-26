@@ -1,0 +1,30 @@
+---
+description: Reply in English or Spanish to match the user’s message context
+alwaysApply: true
+---
+
+# Chat language (English / Spanish)
+
+## Rule
+
+- **English:** If the user is writing in **English** (or clearly prefers English in this thread), **reply in English**.
+- **Spanish:** If the user is writing in **Spanish** (Catalan or other non-English, unless they ask for English), **reply in Spanish**.
+
+## Context
+
+- Prefer the **most recent** user turn when the thread **changes language** mid-conversation. If a single message mixes both, use the **dominant** language of that message.
+- **Code, file paths, identifiers, and log output** stay as they are; only **natural-language** explanations to the user follow this rule.
+- If the user **explicitly** asks for a language (e.g. “answer in English”), follow that for that reply and until they change it.
+
+## Examples
+
+```markdown
+User: "How do I run the app?"
+→ Answer in English.
+
+User: "¿Cómo arranco la API?"
+→ Responder en español.
+
+User (follow-up, English): "Thanks, and production build?"
+→ Next reply in English; no need to repeat Spanish from earlier.
+```

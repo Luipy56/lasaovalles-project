@@ -7,9 +7,19 @@
   } @else if (!catalog()) {
     <p class="orders__loading">{{ 'orders.loading' | transloco }}</p>
   } @else {
-    <div class="orders__nav-fab" role="group" [attr.aria-label]="'orders.scrollPrev' | transloco">
-      <button type="button" class="orders__fab" (click)="scrollPrev()" [attr.aria-label]="'orders.scrollPrev' | transloco">↑</button>
-      <button type="button" class="orders__fab" (click)="scrollNext()" [attr.aria-label]="'orders.scrollNext' | transloco">↓</button>
+    <div class="orders__nav-fab" role="group" [attr.aria-label]="'orders.scrollNav' | transloco">
+      <button type="button" class="orders__fab orders__fab--jump" (click)="scrollFirst()" [attr.aria-label]="'orders.scrollFirst' | transloco">
+        <svg class="orders__fab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M12 4L6 10h12L12 4zm0 7L6 17h12L12 11z" />
+        </svg>
+      </button>
+      <button type="button" class="orders__fab" (click)="scrollPrev()" [attr.aria-label]="'orders.scrollPrev' | transloco">▲</button>
+      <button type="button" class="orders__fab" (click)="scrollNext()" [attr.aria-label]="'orders.scrollNext' | transloco">▼</button>
+      <button type="button" class="orders__fab orders__fab--jump" (click)="scrollToDades()" [attr.aria-label]="'orders.scrollToDades' | transloco">
+        <svg class="orders__fab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M12 20L6 14h12L12 20zm0-7L6 7h12L12 13z" />
+        </svg>
+      </button>
     </div>
 
     @for (cat of catalog()!.categories; track cat.id) {
@@ -39,7 +49,7 @@
                       class="orders__qty"
                       type="number"
                       min="0"
-                      step="0.001"
+                      step="0.1"
                       [name]="'q-' + it.id"
                       [ngModel]="qty(it.id)"
                       (ngModelChange)="setQty(it.id, $event)"
@@ -61,7 +71,7 @@
       </p>
     </section>
 
-    <section class="orders__customer">
+    <section class="orders__customer" id="orders-dades" tabindex="-1">
       <h2 class="orders__customer-h">{{ 'orders.customerH' | transloco }}</h2>
       <label class="orders__field">
         <span>{{ 'orders.name' | transloco }}</span>

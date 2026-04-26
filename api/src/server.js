@@ -1,12 +1,22 @@
-import 'dotenv/config';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import dotenv from 'dotenv';
+import { ZodError } from 'zod';
 import cors from 'cors';
 import express from 'express';
 import rateLimit from 'express-rate-limit';
 
 import { requireAdmin } from './adminAuth.js';
-import { readCatalog, writeCatalogAtomic } from './catalogStore.js';
+import { getCatalogPath, readCatalog, writeCatalogAtomic } from './catalogStore.js';
 import { parseAndValidateCatalog } from './catalogSchema.js';
 import { handlePostOrder } from './ordersHandler.js';
+import { isMailConfigured } from './mailSend.js';
+
+const __apiDir = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
+dotenv.config({ path: path.join(__apiDir, '.env') });
+
+const devCatalogErrors =
+  String(process.env.NODE_ENV || '').toLowerCase() !== 'production' || process.env.API_DEBUG_CATALOG === '1';
 
 const PORT = Number(process.env.PORT || 3000);
 const app = express();
@@ -23,17 +33,49 @@ app.use(express.json({ limit: '1mb' }));
 
 const api = express.Router();
 
+/**
+ * @param {import('express').Response} res
+ * @param {unknown} e
+ */
+function sendCatalogReadError(res, e) {
+  console.error(e);
+  if (e && typeof e === 'object' && 'code' in e && e.code === 'ENOENT') {
+    res.status(500).json({
+      error: 'Catalog file not found. Check CATALOG_PATH or api/data/order-catalog.json.',
+      ...(devCatalogErrors && { catalogPath: getCatalogPath() })
+    });
+    return;
+  }
+  if (e instanceof ZodError) {
+    res.status(500).json({
+      error: 'Catalog JSON is invalid (schema).',
+      ...(devCatalogErrors && { details: e.flatten(), issues: e.issues })
+    });
+    return;
+  }
+  if (e instanceof SyntaxError) {
+    res.status(500).json({
+      error: 'Catalog file is not valid JSON.',
+      ...(devCatalogErrors && { message: e.message })
+    });
+    return;
+  }
+  res.status(500).json({ error: 'Could not read catalog.' });
+}
+
 api.get('/health', (_req, res) => {
-  res.json({ ok: true, service: 'lasaovalles-api' });
+  res.json({
+    ok: true,
+    service: 'lasaovalles-api',
+    mailConfigured: isMailConfigured()
+  });
 });
 
 api.get('/catalog', (_req, res) => {
   try {
-    const catalog = readCatalog();
-    res.json(catalog);
+    res.json(readCatalog());
   } catch (e) {
-    console.error(e);
-    res.status(500).json({ error: 'Could not read catalog.' });
+    sendCatalogReadError(res, e);
   }
 });
 
@@ -41,8 +83,7 @@ api.get('/admin/catalog', requireAdmin, (_req, res) => {
   try {
     res.json(readCatalog());
   } catch (e) {
-    console.error(e);
-    res.status(500).json({ error: 'Could not read catalog.' });
+    sendCatalogReadError(res, e);
   }
 });
 

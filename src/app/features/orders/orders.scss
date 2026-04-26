@@ -35,13 +35,17 @@
 }
 
 .orders__fab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 2.75rem;
   height: 2.75rem;
   border-radius: 999px;
   border: 2px solid t.$color-primary;
   background: rgba(255, 255, 255, 0.95);
   color: t.$color-primary;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
+  line-height: 1;
   font-weight: 700;
   cursor: pointer;
   box-shadow: t.$shadow;
@@ -49,6 +53,17 @@
   &:focus-visible {
     background: t.$color-surface-subtle;
   }
+
+  &--jump {
+    border-style: dashed;
+  }
+}
+
+.orders__fab-icon {
+  display: block;
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
 }
 
 .orders__cat {
@@ -117,7 +132,9 @@
 
 .orders__customer {
   max-width: 32rem;
-  margin-top: t.$space-6;
+  width: 100%;
+  margin: t.$space-6 auto 0;
+  scroll-margin-top: 5rem;
 }
 
 .orders__customer-h {

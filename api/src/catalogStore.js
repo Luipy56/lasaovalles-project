@@ -6,7 +6,7 @@ import { catalogSchema } from './catalogSchema.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export function getCatalogPath() {
-  const p = process.env.CATALOG_PATH;
+  const p = process.env.CATALOG_PATH?.trim();
   if (p) return path.resolve(p);
   return path.join(__dirname, '../data/order-catalog.json');
 }

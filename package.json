@@ -4,12 +4,13 @@
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "concurrently -k -n api,web -c cyan,magenta \"npm run dev --prefix api\" \"ng serve\"",
+    "dev": "npm start",
+    "start:web": "ng serve",
     "start:api": "npm run start --prefix api",
     "postinstall": "npm install --prefix api",
-    "dev": "concurrently -n api,web -c cyan,magenta \"npm run start:api\" \"ng serve\"",
-    "dev:api": "npm run start:api",
-    "dev:web": "ng serve",
+    "dev:api": "npm run dev --prefix api",
+    "dev:web": "npm run start:web",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

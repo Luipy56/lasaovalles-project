@@ -83,7 +83,7 @@ export class OrdersComponent {
 
   setQty(id: string, raw: string | number): void {
     const n = typeof raw === 'number' ? raw : parseFloat(String(raw).replace(',', '.'));
-    const v = Number.isFinite(n) && n >= 0 ? Math.round(n * 1000) / 1000 : 0;
+    const v = Number.isFinite(n) && n >= 0 ? Math.round(n * 10) / 10 : 0;
     this.qtyById.update((m) => ({ ...m, [id]: v }));
   }
 
@@ -103,6 +103,10 @@ export class OrdersComponent {
     return Math.round(t * 100) / 100;
   });
 
+  scrollFirst(): void {
+    this.scrollToIndex(0);
+  }
+
   scrollPrev(): void {
     const c = this.catalog();
     if (!c?.categories.length) return;
@@ -115,6 +119,12 @@ export class OrdersComponent {
     if (!c?.categories.length) return;
     const i = Math.min(c.categories.length - 1, this.catNavIndex() + 1);
     this.scrollToIndex(i);
+  }
+
+  scrollToDades(): void {
+    const el = document.getElementById('orders-dades');
+    el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    queueMicrotask(() => el?.focus({ preventScroll: true }));
   }
 
   private scrollToIndex(i: number): void {

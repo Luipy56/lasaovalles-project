@@ -23,10 +23,10 @@ By default the import script looks for the spreadsheet at **`../../phase-zero/La
 
 ```bash
 npm install
-npm run dev
+npm start
 ```
 
-That runs **`npm start` in `api/`** and **`ng serve`** together (`concurrently` in the parent `package.json`).
+That runs `npm run dev` in `api/` (`node --watch`) and `ng serve` together (`concurrently` in the parent `package.json`). Same as `npm run dev` from the `saovalles/` root.
 
 3. Or run separately: `npm run start --prefix api` and `ng serve` (proxy: `proxy.conf.json` → port 3000).
 
